@@ -21,10 +21,10 @@ void status_Callback(const assignment_2_2022::PlanningActionResult::ConstPtr& ms
 
 bool goal_number(assignment_2_2022::Goal::Request &req, assignment_2_2022::Goal::Response &res){
 	
-	cancelled_goals += 1; //One goal was cancelled
+	cancelled_goals += req.count_c; //One goal was cancelled
 	res.total_r = reached_goals;
 	res.total_c =cancelled_goals;
-	ROS_INFO("Reached goals:%d, Cancelled goals:%d", res.total_r, res.total_c);
+	//ROS_INFO("Reached goals:%d, Cancelled goals:%d", res.total_r, res.total_c);
 	
 	return true;
 }
